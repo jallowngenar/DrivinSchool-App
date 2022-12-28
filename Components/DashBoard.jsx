@@ -21,9 +21,9 @@ function DashBoard({ navigation }) {
           styles.dashboardBg,
         ]}
       >
-        <View
+        {/* <View
           style={[{ width: width, height: height }, styles.viewOverlay]}
-        ></View>
+        ></View> */}
         <View style={styles.dashboardHeader}>
           <Text style={styles.headerText}>Test your driving skills</Text>
           <Text style={styles.headerText}>Get your driving license</Text>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     // paddingTop: 30,
     justifyContent: "space-between",
     alignItems: "center",
-    position: "absolute",
+    // position: "absolute",
   },
   dashboardHeader: {
     marginTop: 30,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#fff",
+    color: "#dcdcdc",
     textTransform: "uppercase",
   },
   button: {
@@ -83,14 +83,14 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     width: 300,
   },
-  viewOverlay: {
-    backgroundColor: "#000",
-    position: "absolute",
-    opacity: 0.4,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    // top: 20,
-  },
+  // viewOverlay: {
+  //   backgroundColor: "#000",
+  //   position: "absolute",
+  //   opacity: 0.6,
+  //   left: 0,
+  //   right: 0,
+  //   bottom: 0,
+  //   // top: 20,
+  // },
 });
 export default DashBoard;
