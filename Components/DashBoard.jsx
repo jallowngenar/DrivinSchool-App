@@ -9,10 +9,11 @@ import {
   StatusBar,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+// import { useCallback } from "react";
 
-// import { Video } from "expo-av";
 function DashBoard({ navigation }) {
   const { width, height } = Dimensions.get("window");
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -29,10 +30,7 @@ function DashBoard({ navigation }) {
           <Text style={styles.headerText}>Get your driving license</Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-          <LinearGradient
-            colors={["#1ACABC", "#073ABBA3"]}
-            style={styles.button}
-          >
+          <LinearGradient colors={["#FF5A2C", "#e35b3b"]} style={styles.button}>
             <Text
               style={{
                 color: "white",
@@ -65,6 +63,7 @@ const styles = StyleSheet.create({
   },
   dashboardHeader: {
     marginTop: 30,
+    fontFamily: "monospace",
   },
   headerText: {
     fontSize: 24,

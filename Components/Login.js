@@ -5,32 +5,19 @@ import {
   View,
   KeyboardAvoidingView,
   StyleSheet,
+  Image,
 } from "react-native";
-
+import Ionicons from "@expo/vector-icons";
 function Login({ navigation }) {
   return (
     <KeyboardAvoidingView style={styles.container}>
       <View>
-        <Text
-          // style={{
-          //   marginTop: 75,
-          //   textAlign: "center",
-          //   fontSize: 35,
-          //   color: "#FF5A2C",
-          // }}
-          style={styles.headerText}
-        >
-          log in
-        </Text>
+        <Text style={styles.headerText}>log in</Text>
 
         <View style={styles.textInputContainer}>
           <Text style={styles.welcomeText}>Welcome back! please Login</Text>
           {/* <Text>User Name</Text> */}
-          <TextInput
-            // style={{ borderBottomWidth: 0.5, padding: 5 }}
-            style={styles.textInput}
-            placeholder="user@gmail.com"
-          />
+          <TextInput style={styles.textInput} placeholder="Email" />
 
           {/* <Text>Password</Text> */}
           <TextInput
@@ -63,7 +50,34 @@ function Login({ navigation }) {
           <Text style={styles.forgotPasswordText}>Forgot Password</Text>
         </View>
 
-        <View style={styles.altLogin}></View>
+        <View style={styles.altLogin}>
+          <View style={styles.altLoginItem}>
+            <Image
+              source={require("../assets/logos/google.png")}
+              style={{ width: 30, height: 30 }}
+            />
+            <Text>Google</Text>
+          </View>
+          <View style={styles.altLoginItem}>
+            <Image
+              source={require("../assets/logos/facebook.png")}
+              style={{ width: 30, height: 30 }}
+            />
+            <Text>Facebook</Text>
+          </View>
+        </View>
+
+        <View style={styles.signUp}>
+          <Text>Don't have an account yet?</Text>
+          <Text
+            style={{ color: "#FF5A2C", fontWeight: "bold", paddingLeft: 5 }}
+            onPress={() => {
+              navigation.navigate("Register");
+            }}
+          >
+            Sign Up
+          </Text>
+        </View>
       </View>
     </KeyboardAvoidingView>
   );
@@ -80,6 +94,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     color: "#FF5A2C",
     fontStyle: "italic",
+    fontFamily: "Lobster",
     fontWeight: "700",
   },
   textInputContainer: {
@@ -117,6 +132,27 @@ const styles = StyleSheet.create({
   forgotPasswordText: {
     fontSize: 16,
     color: "#FF5A2C",
+  },
+  altLogin: {
+    margin: 30,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  altLoginItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderWidth: 1,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 50,
+    borderColor: "gray",
+    width: 150,
+  },
+
+  signUp: {
+    flexDirection: "row",
+    justifyContent: "center",
   },
 });
 export default Login;
