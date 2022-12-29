@@ -43,7 +43,16 @@ function DashBoard({ navigation }) {
             </Text>
           </LinearGradient>
         </TouchableOpacity>
+        <LinearGradient
+          style={styles.circle}
+          colors={["#ff5a2c", "#e33b74"]}
+        ></LinearGradient>
+        <LinearGradient
+          style={styles.circleOther}
+          colors={["#ff5a2c", "#e33b74"]}
+        ></LinearGradient>
       </ImageBackground>
+
       <StatusBar
         barStyle={"dark-content"}
         hidden={false}
@@ -72,10 +81,29 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   button: {
-    marginBottom: 40,
+    marginBottom: 100,
     borderRadius: 10,
     paddingVertical: 10,
+    marginRight: 10,
+    width: 200,
+  },
+  circle: {
+    position: "absolute",
     width: 300,
+    height: 300,
+    borderRadius: 150,
+    left: -180,
+    bottom: -180,
+    opacity: 0.8,
+  },
+  circleOther: {
+    position: "absolute",
+    width: 300,
+    height: 300,
+    borderRadius: 150,
+    right: -180,
+    bottom: -120,
+    opacity: 0.8,
   },
 });
 export default DashBoard;
