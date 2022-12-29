@@ -7,7 +7,6 @@ import {
   StyleSheet,
   Image,
 } from "react-native";
-import Ionicons from "@expo/vector-icons";
 function Login({ navigation }) {
   return (
     <KeyboardAvoidingView style={styles.container}>
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
   altLoginItem: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     borderWidth: 1,
     paddingHorizontal: 15,
     paddingVertical: 5,

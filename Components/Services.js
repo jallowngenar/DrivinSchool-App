@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   View,
   StyleSheet,
+  Dimensions,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
@@ -26,7 +27,7 @@ function Services({ navigation }) {
   ];
 
   return (
-    <ScrollView style={{ marginTop: 30 }}>
+    <ScrollView style={{ marginTop: 10 }}>
       {/* <LinearGradient color={["#00FFEB", "#073ABB"]}></LinearGradient> */}
       <View
         style={{
@@ -35,13 +36,24 @@ function Services({ navigation }) {
           alignItems: "center",
         }}
       >
-        <Text style={{ alignSelf: "center", fontSize: 30 }}>Our Services</Text>
+        <Text
+          style={{
+            alignSelf: "center",
+            fontSize: 30,
+            fontWeight: "bold",
+            color: "#FF5A2C",
+            fontStyle: "italic",
+            paddingVertical: 20,
+          }}
+        >
+          Our Services
+        </Text>
         {Pakages.map(
           (item, index) => (
             <LinearGradient
-              colors={["#1ACABC", "#073ABBA3"]}
               style={styles.priceCard}
               key={index}
+              colors={["#ff5a2c", "#e33b74"]}
             >
               <View style={styles.priceCard}>
                 <Text
@@ -72,14 +84,14 @@ function Services({ navigation }) {
                       justifyContent: "center",
                     }}
                   >
-                    <Text style={{ fontSize: 28, color: "gray" }}>
+                    <Text style={{ fontSize: 28, color: "#fff" }}>
                       Subscribe
                     </Text>
                     <FontAwesome
                       name="angle-right"
                       size={40}
                       //   color="black"
-                      style={{ marginLeft: 20, color: "gray" }}
+                      style={{ marginLeft: 20, color: "#fff" }}
                     />
                   </View>
                 </TouchableOpacity>
@@ -153,10 +165,11 @@ function Services({ navigation }) {
     </ScrollView>
   );
 }
+const WindowWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   priceCard: {
     // backgroundColor: "#8D90DB",
-    width: 300,
+    width: WindowWidth - 30,
     height: 250,
     borderRadius: 20,
     marginBottom: 20,
@@ -166,10 +179,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   subscribeBtn: {
-    backgroundColor: "#fff",
-    paddingVertical: 7,
-    width: "90%",
-
+    backgroundColor: "#080808",
+    color: "#fff",
+    paddingVertical: 3,
+    width: "70%",
+    opacity: 0.7,
     borderRadius: 10,
   },
 });
